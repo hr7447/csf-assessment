@@ -1,8 +1,0 @@
-providers = ["java"]
-java.version = "17"
-
-[phases.build]
-cmds = ["chmod +x ./mvnw", "./mvnw package -DskipTests"]
-
-[start]
-cmd = "java -Dserver.port=$PORT $JAVA_OPTS -jar target/restaurant-server.jar" 
