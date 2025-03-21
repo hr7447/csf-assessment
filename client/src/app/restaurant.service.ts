@@ -2,13 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, lastValueFrom } from 'rxjs';
 import { MenuItem, Order, OrderConfirmation } from './models';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantService {
 
-  private API_URL = '/api';
+  private API_URL = `${environment.apiUrl}/api`;
 
   constructor(private http: HttpClient) { }
 
