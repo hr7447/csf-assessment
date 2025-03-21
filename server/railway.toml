@@ -3,6 +3,6 @@ builder = "nixpacks"
 buildCommand = "chmod +x ./mvnw && ./mvnw package -DskipTests"
 
 [deploy]
-startCommand = "java -Dserver.port=$PORT $JAVA_OPTS -jar target/*.jar"
+startCommand = "java -Dserver.port=$PORT $JAVA_OPTS -jar target/restaurant-server.jar"
 healthcheckPath = "/api/menu"
 healthcheckTimeout = 300 
