@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .api-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .api-link:hover {
+            background-color: #0052a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant API Service</h1>
+        <p>This is the backend server for the Restaurant application.</p>
+        <p>To interact with the API, please use the following endpoints:</p>
+        <ul>
+            <li><a href="/api/menu">Menu Items</a> - GET request to retrieve all menu items</li>
+            <li><strong>Place Order</strong> - POST request to /api/food_order to submit an order</li>
+        </ul>
+        <p>Sample credentials for testing:</p>
+        <ul>
+            <li>Username: fred</li>
+            <li>Password: fred</li>
+        </ul>
+        <a href="/api/menu" class="api-link">View Menu API</a>
+    </div>
+</body>
+</html> 
