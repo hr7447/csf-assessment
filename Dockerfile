@@ -19,11 +19,14 @@ WORKDIR /app
 # Copy the Spring Boot JAR
 COPY --from=build /app/target/*.jar /app/app.jar
 
-# Copy the Angular build output to the Spring Boot static resources
-COPY --from=angular-build /ng-app/dist/client/browser/ /app/src/main/resources/static/
+# Create directory for static resources
+RUN mkdir -p /app/static
+
+# Copy the Angular build output to the static directory
+COPY --from=angular-build /ng-app/dist/client/browser/ /app/static/
 
 # Expose port
 EXPOSE 3000
 
-# Run the application
-ENTRYPOINT ["java", "-jar", "/app/app.jar"] 
+# Run the application with static resource location
+ENTRYPOINT ["java", "-Dspring.web.resources.static-locations=file:/app/static/", "-jar", "/app/app.jar"] 
