@@ -1,0 +1,34 @@
+<div class="row mt-3">
+  <div class="col">
+    <div class="fs-1 fw-bold text-primary">Order Placed</div>
+    <div class="d-flex justify-content-end">
+      <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2" *ngIf="confirmation">
+  <div class="col">
+    <p>Your order details are below</p>
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <td>Date:</td>
+          <td><code>{{ formattedDate }}</code></td>
+        </tr>
+        <tr>
+          <td>Order Id:</td>
+          <td><code>{{ confirmation.orderId }}</code></td>
+        </tr>
+        <tr>
+          <td>Payment Id:</td>
+          <td><code>{{ confirmation.paymentId }}</code></td>
+        </tr>
+        <tr>
+          <td>Total:</td>
+          <td><code>${{ confirmation.total | number:'1.2-2' }}</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
